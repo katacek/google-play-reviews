@@ -24,4 +24,4 @@ https://api.apify.com/v2/acts/katerinahronik~google-plays-reviews?token=<YOUR_AP
 
 ## CU usage 
 
-Depends on number of reviews needed - approximatelly 0.006CU per 100 reviews.
+Depends on number of reviews needed - approximatelly 0.006 CU per 100 reviews.
