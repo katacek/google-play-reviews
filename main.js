@@ -5,12 +5,12 @@ Apify.main(async () => {
 
     try{
    
-        //const input = await Apify.getValue('INPUT');
-        const input = 
-                {
-                    appId: 'com.neverland.alreader',
-                    limit: 100
-                };
+        const input = await Apify.getValue('INPUT');
+        // const input = 
+        //         {
+        //             appId: 'com.neverland.alreader',
+        //             limit: 100
+        //         };
 
 
     const url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
