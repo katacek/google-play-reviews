@@ -5,11 +5,12 @@ Apify.main(async () => {
 
     try{
    
-    const input = await Apify.getValue('INPUT');
-    // {
-    //     appId: 'com.neverland.alreader',
-    //     limit: 100
-    // };
+        //const input = await Apify.getValue('INPUT');
+        const input = 
+                {
+                    appId: 'com.neverland.alreader',
+                    limit: 100
+                };
 
 
     const url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
@@ -76,7 +77,7 @@ Apify.main(async () => {
             review.name = spans[0];
             review.date = spans[2];
             review.rating = rating;
-            review.text = spans[12];
+            review.text = spans[13];
             reviews.push(review);
         })
         return reviews;
