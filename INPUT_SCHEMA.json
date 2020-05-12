@@ -7,7 +7,7 @@
     "appId": {
       "title": "Application id",
       "type": "string",
-      "description": "Application id on google play - in url address after 'id=' and before '&showAllReviews.'",
+      "description": "Application id on google play - in url address after 'id='",
       "prefill": "com.neverland.alreader",
       "editor": "textfield"
     },
