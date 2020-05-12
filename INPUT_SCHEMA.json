@@ -15,7 +15,7 @@
       "title": "Reviews limit",
       "type": "integer",
       "description": "Email where we should send email if there are no data about Total Infected, which means something is wrong.",
-      "prefill": "100",
+      "prefill": 100,
       "editor": "textfield"
     }
   },
