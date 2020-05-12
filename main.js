@@ -18,6 +18,7 @@ Apify.main(async () => {
     
     console.log('Input:');
    
+    const appId = input.appId;
     const limit = input.limit;
 
     const browser = await Apify.launchPuppeteer();
@@ -85,8 +86,9 @@ Apify.main(async () => {
         reviews = reviews.slice(0, limit);
  
     // Save output
-    
-    const dataset = await Apify.openDataset(`Google-play-reviews${input.appId}`);
+    const splittedName = appId.split('.')[2]
+
+    const dataset = await Apify.openDataset(`Google-play-reviews${splittedName}`);
     await dataset.pushData(reviews);
            
     console.log('Data saved..')
