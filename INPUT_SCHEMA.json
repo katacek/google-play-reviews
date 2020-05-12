@@ -1,0 +1,23 @@
+{
+  "title": "Google play reviews",
+  "description": "This actor scrapes app reviews from Google Play.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "appId": {
+      "title": "Application id",
+      "type": "string",
+      "description": "Application id on google play - in url address after 'id=' and before '&showAllReviews.'",
+      "prefill": "com.neverland.alreader",
+      "editor": "textfield"
+    },
+    "limit": {
+      "title": "Reviews limit",
+      "type": "integer",
+      "description": "Email where we should send email if there are no data about Total Infected, which means something is wrong.",
+      "prefill": "100",
+      "editor": "textfield"
+    }
+  },
+  "required": ["appId", "limit"]
+}
