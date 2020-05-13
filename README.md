@@ -20,7 +20,7 @@ Please, note that the runtime may vary depending on the time-period. For longer 
 
 To run the actor from your code, send a HTTP POST request to the following API endpoint: 
 
-https://api.apify.com/v2/acts/katerinahronik~google-plays-reviews?token=<YOUR_API_TOKEN>
+https://api.apify.com/v2/acts/katerinahronik~google-play-reviews?token=<YOUR_API_TOKEN>
 
 ## CU usage 
 
