@@ -1,6 +1,6 @@
 # Google play application reviews
 
-Apify actor to download application reviews from [Google Play Store](https://play.google.com/store/apps). The actor creates dataset called "Google-play-reviews-<applicationName>" containing name, date, rating and text of each review.
+Apify actor to download application reviews from [Google Play Store](https://play.google.com/store/apps). The actor creates dataset called "Google-play-reviews-<applicationName>" containing name, date, rating and text of each review. Example dataset for busuu app is [here](https://api.apify.com/v2/datasets/ubarV5aetDAZBLYCu/items?format=json&clean=1).
 
 ## Input 
 
