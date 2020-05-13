@@ -15,8 +15,6 @@ Apify.main(async () => {
 
     const url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
 
-    //https://play.google.com/store/apps/details?id=com.neverland.alreader&showAllReviews=true
-    
     console.log('Input:');
    
     const appId = input.appId;
@@ -28,17 +26,7 @@ Apify.main(async () => {
     const page = await browser.newPage();
     await page.goto(url);
     await Apify.utils.puppeteer.injectJQuery(page);
-
-   // await page.hover(`div[data-value="2"]`);
-   // await page.click(`div[data-value="2"]`);
-    await page.evaluate(x =>
-    {
-        $('span[jsslot]:contains(Most relevant)').click();
-        $('span[jsslot]:contains(Newest)').eq(0).click();
-     
-    });
-
-   
+ 
     let numberOfReviews = await page.evaluate(x => ($('div[jscontroller][jsdata][jsmodel]').not('[jsaction]').get().length));
     if (numberOfReviews < limit)
     {
@@ -73,11 +61,18 @@ Apify.main(async () => {
 
             // shift() Remove the first item of an array
             const rating = $('div[aria-label*=Rated]',this).attr('aria-label').match(/\d+/).shift();
+            const text = $('span[jsname]',this).map(function ()
+            {
+                return $(this).text();
+            });
  
             review.name = spans[0];
             review.date = spans[2];
             review.rating = rating;
-            review.text = spans[13];
+            review.text = text[text.length-1];
+            if (review.text=='') {
+                review.text = text[text.length-2];
+            }
             reviews.push(review);
         })
         return reviews;
