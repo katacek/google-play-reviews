@@ -82,9 +82,9 @@ Apify.main(async () => {
         reviews = reviews.slice(0, limit);
  
     // Save output
-    const splittedName = appId.split('.')[2]
+    const appNameHash = appId.replace(/\./g, '-')
 
-    const dataset = await Apify.openDataset(`Google-play-reviews-${splittedName}`);
+    const dataset = await Apify.openDataset(`Google-play-reviews-${appNameHash}`);
     await dataset.pushData(reviews);
            
     console.log('Data saved..')
