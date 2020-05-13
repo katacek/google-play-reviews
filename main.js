@@ -5,12 +5,12 @@ Apify.main(async () => {
 
     try{
    
-        const input = await Apify.getValue('INPUT');
-        // const input = 
-        //         {
-        //             appId: 'com.neverland.alreader',
-        //             limit: 100
-        //         };
+        //const input = await Apify.getValue('INPUT');
+        const input = 
+                {
+                    appId: 'com.aparkin.bestwifi',
+                    limit: 100
+                };
 
 
     const url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
@@ -37,7 +37,7 @@ Apify.main(async () => {
         if (numberOfReviews < limit)
         {
 
-            while (await page.evaluate(x => $('span:contains(Show More)[JSSLOT]') != null) && numberOfReviews <= limit)
+            while ((await page.evaluate(x => $('span:contains(Show More)[JSSLOT]') )) != null  && numberOfReviews <= limit)
             {
                 await page.evaluate(x => $('span:contains(Show More)[JSSLOT]').click());
                 await Apify.utils.puppeteer.infiniteScroll(page, { timeoutSecs: 0, waitForSecs: 10 });
