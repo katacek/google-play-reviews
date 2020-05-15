@@ -5,19 +5,28 @@ Apify.main(async () => {
 
     try{
    
-        const input = await Apify.getValue('INPUT');
-        //const input = 
-        //        {
-        //            appId: 'com.aparkin.bestwifi',
-        //            limit: 100
-        //        };
+        //const input = await Apify.getValue('INPUT');
+        const input = 
+               {
+                   appUrl: 'https://play.google.com/store/apps/details?id=com.snapchat.android&hl=en',
+                   appId: 'com.aparkin.bestwifi',
+                   limit: 30
+               };
 
 
-    const url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
+    //const url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
 
     console.log('Input:');
+
+    let url = '';
    
-    const appId = input.appId;
+    if (input.appUrl) {
+        url = `${input.appUrl}&showAllReviews=true`;
+    }
+    else {
+        url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
+    }
+    //const appId = input.appId;
     const limit = input.limit;
 
     const browser = await Apify.launchPuppeteer();
@@ -82,7 +91,7 @@ Apify.main(async () => {
         reviews = reviews.slice(0, limit);
  
     // Save output
-    const appNameHash = appId.replace(/\./g, '-')
+    //const appNameHash = appId.replace(/\./g, '-')
     
     //await Apify.setValue(`Google-play-reviews-${appNameHash}`, reviews);
 
