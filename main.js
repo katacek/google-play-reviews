@@ -18,8 +18,6 @@ Apify.main(async () => {
         throw(new Error('input.appUrl or input.appId must be provided'))
     }
 
-    console.log('Input:');
-
     let url = '';
    
     if (input.appUrl) {
@@ -57,6 +55,7 @@ Apify.main(async () => {
         }
     }
 
+    console.log('Downloading reviews...');  
     let reviews = await page.evaluate(x =>
     {
         let reviews=[];
