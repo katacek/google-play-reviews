@@ -7,7 +7,7 @@
     "appUrl": {
       "title": "Application url",
       "type": "string",
-      "description": "Application id on google play",
+      "description": "Application url on google play",
       "prefill": "https://play.google.com/store/apps/details?id=com.neverland.alreader&hl=en",
       "editor": "textfield"
     },
