@@ -5,12 +5,12 @@ Apify.main(async () => {
 
     try{
    
-        //const input = await Apify.getValue('INPUT');
-        const input = 
-                {
-                    appId: 'com.aparkin.bestwifi',
-                    limit: 100
-                };
+        const input = await Apify.getValue('INPUT');
+        //const input = 
+        //        {
+        //            appId: 'com.aparkin.bestwifi',
+        //            limit: 100
+        //        };
 
 
     const url = `https://play.google.com/store/apps/details?id=${input.appId}&showAllReviews=true`;
@@ -83,9 +83,11 @@ Apify.main(async () => {
  
     // Save output
     const appNameHash = appId.replace(/\./g, '-')
+    
+    await Apify.setValue(`Google-play-reviews-${appNameHash}`, reviews);
 
-    const dataset = await Apify.openDataset(`Google-play-reviews-${appNameHash}`);
-    await dataset.pushData(reviews);
+    //const dataset = await Apify.openDataset(`Google-play-reviews-${appNameHash}`);
+    //await dataset.pushData(reviews);
            
     console.log('Data saved..')
     
