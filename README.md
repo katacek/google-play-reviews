@@ -8,7 +8,8 @@ The following table shows specification of the actor INPUT fields as defined by 
 
 Field |	Type	| Description
 ---| ---| ---|
-appId|	*String*|	(required) Application id on google play - in url address after 'id='
+appUrl|	*String*|	Application url on google play'
+appId|	*String*|	Application id on google play - in url address after 'id='
 limit|	*Integer*|	(required) Number of reviews to be scraped
 
 ## How to run
