@@ -28,6 +28,10 @@ Apify.main(async () => {
     }
     //const appId = input.appId;
     const limit = input.limit;
+    
+    if (input.limit > 4000) {
+        throw(new Error('Maximum reviews limit is set to 4000.'))
+    }
 
     const browser = await Apify.launchPuppeteer();
    
