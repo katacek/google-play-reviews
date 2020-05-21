@@ -21,7 +21,7 @@
     "limit": {
       "title": "Reviews limit",
       "type": "integer",
-      "description": "Number of reviews to be scraped",
+      "description": "Number of reviews to be scraped, maximum is 4000 reviews.",
       "prefill": 100,
       "editor": "number"
     }
