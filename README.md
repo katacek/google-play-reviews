@@ -10,7 +10,7 @@ Field |	Type	| Description
 ---| ---| ---|
 appUrl|	*String*|	Application url on google play
 appId|	*String*|	Application id on google play - in url address after 'id='
-limit|	*Integer*|	(required) Number of reviews to be scraped
+limit|	*Integer*|	(required) Number of reviews to be scraped. Maximum is set to 4000.
 
 ## How to run
 
