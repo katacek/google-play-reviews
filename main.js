@@ -8,9 +8,9 @@ Apify.main(async () => {
         const input = await Apify.getValue('INPUT');
         // const input = 
         //        {
-        //            appUrl: 'https://play.google.com/store/apps/details?id=com.snapchat.android&hl=en',
-        //            //appId: 'com.aparkin.bestwifi',
-        //            limit: 30
+        //         "appUrl": "https://play.google.com/store/apps/details?id=com.nick.noggin&hl=en_US&gl=US",
+        //         "appId": "com.nick.noggin",
+        //         "limit": 1000
         //        };
 
 
@@ -50,7 +50,7 @@ Apify.main(async () => {
         if (numberOfReviews < limit)
         {
 
-            while ((await page.evaluate(x => $('span:contains(Show More)[JSSLOT]') )) != null  && numberOfReviews <= limit)
+            while ((await page.evaluate(x => $('span:contains(Show More)[JSSLOT]').text() )) != null  && numberOfReviews <= limit)
             {
                 await page.evaluate(x => $('span:contains(Show More)[JSSLOT]').click());
                 await Apify.utils.puppeteer.infiniteScroll(page, { timeoutSecs: 0, waitForSecs: 10 });
