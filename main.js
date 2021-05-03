@@ -49,11 +49,11 @@ Apify.main(async () =>
         if (input.sort)
         {
             await page.click('div[jscontroller="iDykod"]');
-            await page.waitFor(1000);
+            await page.waitForTimeout(1000);
             await page.keyboard.type(input.sort);
-            await page.waitFor(1000);
+            await page.waitForTimeout(1000);
             await page.keyboard.press('Enter');
-            await page.waitFor(3000);
+            await page.waitForTimeout(3000);
         }
         
         let numberOfReviews = await page.evaluate(x => ($('div[jscontroller][jsdata][jsmodel]').not('[jsaction]').get().length));
