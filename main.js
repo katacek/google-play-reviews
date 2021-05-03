@@ -7,14 +7,14 @@ Apify.main(async () =>
     try
     {
    
-        const input = await Apify.getValue('INPUT');
-        // const input =
-        // {
-        //     "appUrl": "https://play.google.com/store/apps/details?id=com.nick.noggin&hl=en_US&gl=US",
-        //     "appId": "com.nick.noggin",
-        //     "limit": 1000,
-        //     "sort": 'Newest'
-        // };
+        //const input = await Apify.getValue('INPUT');
+        const input =
+        {
+            "appUrl": "https://play.google.com/store/apps/details?id=com.nick.noggin&hl=en_US&gl=US",
+            "appId": "com.nick.noggin",
+            "limit": 1000,
+            "sort": 'Newest'
+        };
 
 
         if (input.appUrl == undefined && input.appId == undefined)
@@ -49,9 +49,11 @@ Apify.main(async () =>
         if (input.sort)
         {
             await page.click('div[jscontroller="iDykod"]');
+            await page.waitFor(1000);
             await page.keyboard.type(input.sort);
+            await page.waitFor(1000);
             await page.keyboard.press('Enter');
-            await page.waitForTimeout(3000);
+            await page.waitFor(3000);
         }
         
         let numberOfReviews = await page.evaluate(x => ($('div[jscontroller][jsdata][jsmodel]').not('[jsaction]').get().length));
