@@ -7,14 +7,14 @@ Apify.main(async () =>
     try
     {
    
-        //const input = await Apify.getValue('INPUT');
-        const input =
-        {
-            "appUrl": "https://play.google.com/store/apps/details?id=com.nick.noggin&hl=en_US&gl=US",
-            "appId": "com.nick.noggin",
-            "limit": 1000,
-            "sort": 'Newest'
-        };
+        const input = await Apify.getValue('INPUT');
+        // const input =
+        // {
+        //     "appUrl": "https://play.google.com/store/apps/details?id=com.nick.noggin&hl=en_US&gl=US",
+        //     "appId": "com.nick.noggin",
+        //     "limit": 1000,
+        //     "sort": 'Newest'
+        // };
 
 
         if (input.appUrl == undefined && input.appId == undefined)
