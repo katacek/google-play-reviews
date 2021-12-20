@@ -12,7 +12,7 @@ Apify.main(async () =>
         // {
         //     "appUrl": "https://play.google.com/store/apps/details?id=com.nick.noggin&hl=en_US&gl=US",
         //     "appId": "com.nick.noggin",
-        //     "limit": 1000,
+        //     "limit": 10,
         //     "sort": 'Newest'
         // };
 
@@ -40,7 +40,11 @@ Apify.main(async () =>
             throw (new Error('Maximum reviews limit is set to 4000.'))
         }
 
-        const browser = await Apify.launchPuppeteer();
+        const browser = await Apify.launchPuppeteer({
+            launchOptions: {
+                headless: false,
+            }
+        });
    
         console.log(`Opening URL: ${url}`);
         const page = await browser.newPage();
@@ -49,11 +53,11 @@ Apify.main(async () =>
         if (input.sort)
         {
             await page.click('div[jscontroller="iDykod"]');
-            await page.waitForTimeout(1000);
+            await page.waitFor(1000);
             await page.keyboard.type(input.sort);
-            await page.waitForTimeout(1000);
+            await page.waitFor(1000);
             await page.keyboard.press('Enter');
-            await page.waitForTimeout(3000);
+            await page.waitFor(3000);
         }
         
         let numberOfReviews = await page.evaluate(x => ($('div[jscontroller][jsdata][jsmodel]').not('[jsaction]').get().length));
