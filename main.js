@@ -49,6 +49,7 @@ Apify.main(async () =>
         console.log(`Opening URL: ${url}`);
         const page = await browser.newPage();
         await page.goto(url);
+        await page.setBypassCSP(true);
         await Apify.utils.puppeteer.injectJQuery(page);
         if (input.sort)
         {
