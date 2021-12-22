@@ -48,8 +48,12 @@ Apify.main(async () =>
    
         console.log(`Opening URL: ${url}`);
         const page = await browser.newPage();
-        await page.goto(url);
+        
         await page.setBypassCSP(true);
+        await page.goto(url);
+        
+        console.log('Bypass CSP has been set up')
+
         await Apify.utils.puppeteer.injectJQuery(page);
         if (input.sort)
         {
