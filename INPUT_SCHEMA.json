@@ -25,13 +25,6 @@
       "prefill": 100,
       "editor": "number"
     }
-    ,
-    "sort": {
-      "title": "Sort",
-      "type": "string",
-      "description": "Sort by the most relevant by default. Set to 'newest' or 'rating' to change sort option. ",
-      "editor": "textfield"
-    }
   },
   "required": ["limit"]
 }
