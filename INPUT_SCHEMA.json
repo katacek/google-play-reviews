@@ -1,31 +1,33 @@
 {
-  "title": "Google play reviews",
-  "description": "This actor scrapes app reviews from Google Play.",
-  "type": "object",
-  "schemaVersion": 1,
-  "properties": {
-    "appUrl": {
-      "title": "Application url",
-      "type": "string",
-      "description": "Application url on google play",
-      "prefill": "https://play.google.com/store/apps/details?id=com.neverland.alreader&hl=en",
-      "editor": "textfield"
-    },
-    "appId": {
-      "title": "Application id",
-      "type": "string",
-      "description": "Application id on google play - in url address after 'id='",
-      "prefill": "com.neverland.alreader",
-      "editor": "textfield"
-    },
-    "limit": {
-      "title": "Reviews limit",
-      "type": "integer",
-      "description": "Number of reviews to be scraped, maximum is 4000 reviews.",
-      "prefill": 100,
-      "editor": "number",
-      "maximum": 4000
-    },
-  },
-  "required": ["limit"]
+   "title":"Google play reviews",
+   "description":"This actor scrapes app reviews from Google Play.",
+   "type":"object",
+   "schemaVersion":1,
+   "properties":{
+      "appUrl":{
+         "title":"Application url",
+         "type":"string",
+         "description":"Application url on google play",
+         "prefill":"https://play.google.com/store/apps/details?id=com.neverland.alreader&hl=en",
+         "editor":"textfield"
+      },
+      "appId":{
+         "title":"Application id",
+         "type":"string",
+         "description":"Application id on google play - in url address after 'id='",
+         "prefill":"com.neverland.alreader",
+         "editor":"textfield"
+      },
+      "limit":{
+         "title":"Reviews limit",
+         "type":"integer",
+         "description":"Number of reviews to be scraped, maximum is 4000 reviews.",
+         "prefill":100,
+         "editor":"number",
+         "maximum":4000
+      }
+   },
+   "required":[
+      "limit"
+   ]
 }
