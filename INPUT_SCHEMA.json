@@ -24,8 +24,8 @@
       "description": "Number of reviews to be scraped, maximum is 4000 reviews.",
       "prefill": 100,
       "editor": "number",
-      "maximum": 4000,
-    }
+      "maximum": 4000
+    },
   },
   "required": ["limit"]
 }
