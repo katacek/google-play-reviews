@@ -23,7 +23,8 @@
       "type": "integer",
       "description": "Number of reviews to be scraped, maximum is 4000 reviews.",
       "prefill": 100,
-      "editor": "number"
+      "editor": "number",
+      "maximum": 4000,
     }
   },
   "required": ["limit"]
